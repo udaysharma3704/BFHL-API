@@ -6,6 +6,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors())
 app.use(express.json())
 
+const healthRoutes = require("./src/routes/healthRoutes");
+app.use("/health", healthRoutes);
+
+
 app.get("/", (req, res) => {
   res.send("Hello World")
 })
